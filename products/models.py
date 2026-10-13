@@ -40,7 +40,6 @@ class ProductInfo(models.Model):
     
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_info')
     shop = models.ForeignKey(Shop, on_delete=models.CASCADE, related_name='product_info')
-    external_id = models.PositiveIntegerField()
     quantity = models.PositiveIntegerField(validators=[MinValueValidator(0)])
     price = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0)])
     price_rrc = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0)])

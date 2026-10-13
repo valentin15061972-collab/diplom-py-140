@@ -22,7 +22,10 @@ class User(AbstractUser):
 class Contact(models.Model):
     
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='contacts')
-    address = models.CharField(max_length=100)
+    city = models.CharField(max_length=50, verbose_name='Город')
+    street = models.CharField(max_length=100, verbose_name='Улица')
+    house = models.CharField(max_length=15, verbose_name='Дом')
+    apartment = models.CharField(max_length=15, blank=True, verbose_name='Квартира')
     phone = models.CharField(max_length=30)
 
     def __str__(self):
@@ -33,7 +36,7 @@ class ConfirmEmailToken(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='confirm_tokens')
     token = models.CharField(max_length=64, unique=True)
-    created = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     @classmethod
     def generate_token(cls, user):

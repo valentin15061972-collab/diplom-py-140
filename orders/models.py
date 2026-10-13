@@ -10,7 +10,7 @@ class Order(models.Model):
                       ('delivered', 'доставлен'), ('canceled', 'отменён')]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
-    created = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='created')
     contact = models.ForeignKey(Contact, on_delete=models.SET_NULL, blank=True, null=True, related_name='orders')
 

@@ -6,7 +6,8 @@ from products.models import ProductInfo, Shop
 
 class Order(models.Model):
     
-    STATUS_CHOICES = ['created', 'confirmed', 'sent', 'delivered', 'canceled']
+    STATUS_CHOICES = [('created', 'создан'), ('confirmed', 'подтверждён'), ('sent', 'отправлен'), 
+                      ('delivered', 'доставлен'), ('canceled', 'отменён')]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
     created = models.DateTimeField(auto_now_add=True)

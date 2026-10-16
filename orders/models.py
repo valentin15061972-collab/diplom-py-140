@@ -1,17 +1,17 @@
-from django.db import models
-from django.core.validators import MinValueValidator
-from users.models import User, Contact
-from products.models import ProductInfo, Shop
 """
 Модели приложения orders.
 Определяет модели заказов и позиций заказа.
 Заказ привязан к пользователю, контакту (адресу доставки)
 и содержит набор позиций, каждая из которых ссылается
 на товар конкретного магазина.
-
 Order — заказ пользователя со статусом и адресом доставки.
 OrderItem — позиция заказа (товар, магазин, количество).
 """
+from django.db import models
+from django.core.validators import MinValueValidator
+from users.models import User, Contact
+from products.models import ProductInfo, Shop
+
 
 class Order(models.Model):
     

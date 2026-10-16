@@ -1,11 +1,7 @@
-from django.db import models
-from django.core.validators import MinValueValidator
-from users.models import User
 """
 Модели приложения products.
 Определяет модель магазина, категории, товары, информацию о ценах
 и остатках, а также настраиваемые характеристики товаров.
-
 Shop — информация о магазине и его владельце.
 Category — категории товаров.
 Product — базовая информация о товаре.
@@ -13,6 +9,10 @@ ProductInfo — цена и количество товара в конкрет�
 Parameter — настраиваемая характеристика товара.
 ProductParameter — значение характеристики для товара в магазине.
 """
+
+from django.db import models
+from django.core.validators import MinValueValidator
+from users.models import User
 
 
 class Shop(models.Model):

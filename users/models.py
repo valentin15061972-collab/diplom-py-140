@@ -1,7 +1,3 @@
-from django.db import models
-from django.contrib.auth.models import AbstractUser
-import uuid
-
 """
 Модели приложения users.Определяет кастомную модель пользователя, контакты (адреса доставки)
 и токены подтверждения email.
@@ -9,6 +5,10 @@ User — кастомный пользователь с ролями 'buyer' / '
 Contact — адреса доставки, привязанные к пользователю.
 ConfirmEmailToken — токены для подтверждения email при регистрации.
 """
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+import uuid
+
 
 
 class User(AbstractUser):

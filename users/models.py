@@ -15,9 +15,9 @@ class User(AbstractUser):
     
     USER_TYPE = [('buyer', 'Покупатель'), ('shop', 'Магазин'),]
 
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True, verbose_name='Электронная почта')
     company = models.CharField(max_length=50, blank=True)
-    type = models.CharField(max_length=10, choices=USER_TYPE, default='buyer')
+    type = models.CharField(max_length=10, choices=USER_TYPE, default='buyer', verbose_name='Тип пользователя')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
